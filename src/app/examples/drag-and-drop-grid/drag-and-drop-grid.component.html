@@ -1,0 +1,8 @@
+<button (click)="add()">add</button>
+
+<sam-drag-and-drop-grid #listComponent [items]="useSecond ? secondList : list" [columnNumber]="5">
+  <div class="example-item-wrapper" *samDragAndDropListData="let listItem; let i=index">
+    <div class="example-item">Item {{listItem}}; Index {{i}}</div>
+  </div>
+</sam-drag-and-drop-grid>
+
