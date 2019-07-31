@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "drag-and-drop-grid-module": [
+        "dist/drag-and-drop-grid-module"
+      ],
+      "drag-and-drop-grid-module/*": [
+        "dist/drag-and-drop-grid-module/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -115,6 +115,41 @@
           }
         }
       }
+    },
+    "drag-and-drop-grid-module": {
+      "projectType": "library",
+      "root": "projects/drag-and-drop-grid-module",
+      "sourceRoot": "projects/drag-and-drop-grid-module/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/drag-and-drop-grid-module/tsconfig.lib.json",
+            "project": "projects/drag-and-drop-grid-module/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/drag-and-drop-grid-module/src/test.ts",
+            "tsConfig": "projects/drag-and-drop-grid-module/tsconfig.spec.json",
+            "karmaConfig": "projects/drag-and-drop-grid-module/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/drag-and-drop-grid-module/tsconfig.lib.json",
+              "projects/drag-and-drop-grid-module/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "DragAndDropGrid"
 }
