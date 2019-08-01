@@ -1,9 +1,12 @@
 {
   "name": "@sam-1994/ngx-drag-and-drop-grid",
   "version": "1.0.0",
-  "private": false,
   "author": "Samuel Schober",
   "description": "A simple component for using the @angular/cdk drag and drop sort functions with a mixed orientation grid list",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/sam-1994/ngx-drag-and-drop-grid.git"
