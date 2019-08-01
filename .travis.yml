@@ -15,6 +15,7 @@ branches:
 script:
   - npm run lint
   - npm run test:lib
+  - npm run e2e
   - npm run build:lib
   - npm run build:deploy-demo
 

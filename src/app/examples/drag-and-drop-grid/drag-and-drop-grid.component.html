@@ -1,4 +1,5 @@
-<button (click)="add()">add</button>
+<button id="add_button" (click)="add()">Add</button>
+<button id="switch_button" (click)="useSecond = !useSecond">Switch lists</button>
 
 <sam-drag-and-drop-grid #listComponent [items]="useSecond ? secondList : list" [columnNumber]="5">
   <div class="example-item-wrapper" *samDragAndDropListData="let listItem; let i=index">

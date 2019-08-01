@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SamDragAndDropGridComponent } from './sam-drag-and-drop-grid.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
-describe('VmDragAndDropListComponent', () => {
+describe('SamDragAndDropGridComponent', () => {
   let component: SamDragAndDropGridComponent;
   let fixture: ComponentFixture<SamDragAndDropGridComponent>;
 
@@ -11,8 +11,7 @@ describe('VmDragAndDropListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SamDragAndDropGridComponent ],
       imports: [DragDropModule]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

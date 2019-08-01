@@ -1,11 +1,29 @@
-import { browser, by, element } from 'protractor';
+import {browser, by, WebElement, WebElementPromise} from 'protractor';
 
 export class AppPage {
-  navigateTo() {
+  navigateTo(): Promise<any> {
     return browser.get(browser.baseUrl) as Promise<any>;
   }
 
-  getTitleText() {
-    return element(by.css('app-root h1')).getText() as Promise<string>;
+  getAddButton(): Promise<WebElement> {
+    return browser.findElement(by.id('add_button')) as any;
+  }
+
+  getSwitchButton(): Promise<WebElement> {
+    return browser.findElement(by.id('switch_button')) as any;
+  }
+
+  getDropListItems(): Promise<WebElement[]> {
+    return browser.findElements(by.className('sam-drop-list-item')) as Promise<WebElement[]>;
+  }
+
+  getItemTexts(): Promise<string[]> {
+    return this.getDropListItems().then((itemWrappers) => {
+      return Promise.all(
+        itemWrappers.map((itemWrapper) => {
+          return itemWrapper.getText();
+        })
+      );
+    });
   }
 }
