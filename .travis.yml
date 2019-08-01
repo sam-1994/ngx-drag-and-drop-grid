@@ -1,8 +1,7 @@
 language: node_js
 
 node_js:
-  - node
-  - lts/*
+  - "9"
 
 dist: trusty
 
@@ -15,8 +14,8 @@ branches:
 script:
   - npm run lint
   - npm run test:lib
-  - npm run e2e
   - npm run build:lib
+  - npm run e2e
   - npm run build:deploy-demo
 
 after_success:
