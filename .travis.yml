@@ -21,5 +21,13 @@ script:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/DragAndDropGrid
+  on:
+    branch: master
+
 notifications:
   email: false
