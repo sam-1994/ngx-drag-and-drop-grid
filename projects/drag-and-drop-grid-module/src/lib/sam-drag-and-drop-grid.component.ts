@@ -110,29 +110,6 @@ export class SamDragAndDropGridComponent implements AfterViewInit, OnChanges {
     });
   }
 
-  drop() {
-    if (!this.target) {
-      return;
-    }
-
-    const phElement = this.placeholder.element.nativeElement;
-    const parent = phElement.parentElement;
-
-    phElement.style.display = 'none';
-
-    parent.removeChild(phElement);
-    parent.appendChild(phElement);
-    parent.insertBefore(this.source.element.nativeElement, parent.children[this.sourceIndex]);
-
-    this.target = null;
-    this.source = null;
-
-    if (this.sourceIndex !== this.targetIndex) {
-      moveItemInArray(this.items, this.sourceIndex, this.targetIndex);
-      this.renderItems();
-    }
-  }
-
   public enter = (drag: CdkDrag, drop: CdkDropList) => {
     if (drop === this.placeholder) {
       return true;
@@ -170,6 +147,29 @@ export class SamDragAndDropGridComponent implements AfterViewInit, OnChanges {
     return false;
     // tslint:disable-next-line:semicolon
   };
+
+  drop() {
+    if (!this.target) {
+      return;
+    }
+
+    const phElement = this.placeholder.element.nativeElement;
+    const parent = phElement.parentElement;
+
+    phElement.style.display = 'none';
+
+    parent.removeChild(phElement);
+    parent.appendChild(phElement);
+    parent.insertBefore(this.source.element.nativeElement, parent.children[this.sourceIndex]);
+
+    this.target = null;
+    this.source = null;
+
+    if (this.sourceIndex !== this.targetIndex) {
+      moveItemInArray(this.items, this.sourceIndex, this.targetIndex);
+      this.renderItems();
+    }
+  }
 
   /** Determines the point of the page that was touched by the user. */
   getPointerPositionOnPage(event: MouseEvent | TouchEvent) {
