@@ -1,12 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {DragAndDropGridExampleComponent} from './examples/drag-and-drop-grid/drag-and-drop-grid.component';
+import {SamDragAndDropGridModule} from '@sam-1994/ngx-drag-and-drop-grid';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        DragAndDropGridExampleComponent
       ],
+      imports: [
+        SamDragAndDropGridModule
+      ]
     }).compileComponents();
   }));
 
@@ -16,16 +22,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'DragAndDropGrid'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('DragAndDropGrid');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to DragAndDropGrid!');
-  });
 });

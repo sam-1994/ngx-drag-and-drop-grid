@@ -1,0 +1,25 @@
+language: node_js
+
+node_js:
+  - node
+  - lts/*
+
+dist: trusty
+
+sudo: required
+
+branches:
+  only:
+    - master
+
+script:
+  - npm run lint
+  - npm run test:lib
+  - npm run build:lib
+  - npm run build:prod
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email: false

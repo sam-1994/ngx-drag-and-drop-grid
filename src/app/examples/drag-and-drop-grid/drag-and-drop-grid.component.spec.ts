@@ -1,20 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DragAndDropGridComponent } from './drag-and-drop-grid.component';
+import { DragAndDropGridExampleComponent } from './drag-and-drop-grid.component';
+import {SamDragAndDropGridModule} from '@sam-1994/ngx-drag-and-drop-grid';
 
 describe('DragAndDropListComponent', () => {
-  let component: DragAndDropGridComponent;
-  let fixture: ComponentFixture<DragAndDropGridComponent>;
+  let component: DragAndDropGridExampleComponent;
+  let fixture: ComponentFixture<DragAndDropGridExampleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DragAndDropGridComponent ]
+      declarations: [ DragAndDropGridExampleComponent ],
+      imports: [SamDragAndDropGridModule]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DragAndDropGridComponent);
+    fixture = TestBed.createComponent(DragAndDropGridExampleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

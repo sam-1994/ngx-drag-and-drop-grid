@@ -19,10 +19,10 @@
       "dom"
     ],
     "paths": {
-      "drag-and-drop-grid-module": [
+      "@sam-1994/ngx-drag-and-drop-grid": [
         "dist/drag-and-drop-grid-module"
       ],
-      "drag-and-drop-grid-module/*": [
+      "@sam-1994/ngx-drag-and-drop-grid/*": [
         "dist/drag-and-drop-grid-module/*"
       ]
     }

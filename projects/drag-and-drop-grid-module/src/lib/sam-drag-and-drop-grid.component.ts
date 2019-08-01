@@ -37,8 +37,8 @@ export class SamDragAndDropListContentOutletDirective {
 })
 export class SamDragAndDropGridComponent implements AfterViewInit, OnChanges {
 
-  @Input() items: Array<any>;
-  @Input() columnNumber = 1;
+  @Input() public items: Array<any>;
+  @Input() public columnNumber = 1;
 
   @ViewChildren(SamDragAndDropListContentOutletDirective) contentOutlet: QueryList<SamDragAndDropListContentOutletDirective>;
   @ContentChildren(SamDragAndDropListDataDirective) dragAndDropListData: QueryList<SamDragAndDropListDataDirective>;

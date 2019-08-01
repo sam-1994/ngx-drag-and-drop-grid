@@ -1,13 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {SamDragAndDropGridComponent} from 'drag-and-drop-grid-module';
+import {SamDragAndDropGridComponent} from '@sam-1994/ngx-drag-and-drop-grid';
 
 @Component({
   selector: 'app-drag-and-drop-grid-example',
   templateUrl: './drag-and-drop-grid.component.html',
   styleUrls: ['./drag-and-drop-grid.component.sass']
 })
-export class SamDragAndDropGridExampleComponent implements OnInit {
+export class DragAndDropGridExampleComponent implements OnInit {
 
   @ViewChild('listComponent', {static: true}) listComponent: SamDragAndDropGridComponent;
 
