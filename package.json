@@ -7,6 +7,7 @@
     "build": "ng build",
     "build:lib": "ng build drag-and-drop-grid-module",
     "build:prod": "ng build --prod",
+    "build:deploy-demo": "ng build --prod --base-href https://sam-1994.github.io/ngx-drag-and-drop-grid/",
     "test": "ng test",
     "test:lib": "ng test drag-and-drop-grid-module --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",

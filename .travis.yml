@@ -16,7 +16,7 @@ script:
   - npm run lint
   - npm run test:lib
   - npm run build:lib
-  - npm run build:prod
+  - npm run build:deploy-demo
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
