@@ -1,24 +1,76 @@
-# DragAndDropGridModule
+# @sam-1994/ngx-drag-and-drop-grid [![Build Status](https://travis-ci.com/sam-1994/ngx-drag-and-drop-grid.svg?branch=master)](https://travis-ci.com/sam-1994/ngx-drag-and-drop-grid)
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
+A simple component for using the @angular/cdk drag and drop sort functions with a mixed orientation grid list
 
-## Code scaffolding
+Currently the package is only tested in combination with Angular 8.x
 
-Run `ng generate component component-name --project drag-and-drop-grid-module` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project drag-and-drop-grid-module`.
-> Note: Don't forget to add `--project drag-and-drop-grid-module` or else it will be added to the default project in your `angular.json` file. 
+## Table of Contents
+* [Demo](#demo)
+* [Installation](#installation)
+* [Usage](#usage)
+* [API](#api)
 
-## Build
 
-Run `ng build drag-and-drop-grid-module` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Demo
+https://sam-1994.github.io/ngx-drag-and-drop-grid/
 
-## Publishing
+## Installation
 
-After building your library with `ng build drag-and-drop-grid-module`, go to the dist folder `cd dist/drag-and-drop-grid-module` and run `npm publish`.
+First you need to install the npm module:
 
-## Running unit tests
+```sh
+npm install @sam-1994/ngx-drag-and-drop-grid --save
+```
 
-Run `ng test drag-and-drop-grid-module` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Further help
+#### 1. Import the `SamDragAndDropGridModule`:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Finally, you can use ngx-translate in your Angular project. You have to import `SamDragAndDropGridModule` in the NgModule.
+
+```ts
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {SamDragAndDropGridModule} from '@sam-1994/ngx-drag-and-drop-grid';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        SamDragAndDropGridModule
+    ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+#### 2. Use the component:
+
+```ts
+import {Component, OnInit} from '@angular/core';
+import {SamDragAndDropGridComponent} from 'drag-and-drop-grid-module';
+
+@Component({
+  selector: 'app-drag-and-drop-grid-example',
+  templateUrl: './drag-and-drop-grid.component.html',
+  styleUrls: ['./drag-and-drop-grid.component.sass']
+})
+export class SamDragAndDropGridExampleComponent implements OnInit {
+
+  public list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  ngOnInit() {
+  }
+}
+```
+
+```html
+<sam-drag-and-drop-grid [items]="list" [columnNumber]="5">
+  <div *samDragAndDropListData="let listItem; let i=index">
+    Item {{listItem}}; Index {{i}}
+  </div>
+</sam-drag-and-drop-grid>
+```
+
+## API
+
+You can use the `samDragAndDropListData` directive to inject your custom template as grid items.

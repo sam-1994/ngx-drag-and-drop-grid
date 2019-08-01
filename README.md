@@ -1,14 +1,18 @@
-# @sam-1994/ngx-drag-and-drop-grid
+# @sam-1994/ngx-drag-and-drop-grid [![Build Status](https://travis-ci.com/sam-1994/ngx-drag-and-drop-grid.svg?branch=master)](https://travis-ci.com/sam-1994/ngx-drag-and-drop-grid)
 
 A simple component for using the @angular/cdk drag and drop sort functions with a mixed orientation grid list
 
 Currently the package is only tested in combination with Angular 8.x
 
 ## Table of Contents
+* [Demo](#demo)
 * [Installation](#installation)
 * [Usage](#usage)
 * [API](#api)
 
+
+## Demo
+https://sam-1994.github.io/ngx-drag-and-drop-grid/
 
 ## Installation
 
