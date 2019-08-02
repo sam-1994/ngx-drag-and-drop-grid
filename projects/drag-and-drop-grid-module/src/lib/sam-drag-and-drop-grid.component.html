@@ -1,5 +1,5 @@
 <div cdkDropListGroup class="sam-drag-and-drop-grid">
-  <div cdkDropList [cdkDropListEnterPredicate]="enter" (cdkDropListDropped)="drop()"
+  <div cdkDropList #placeholder [cdkDropListEnterPredicate]="enter" (cdkDropListDropped)="drop()"
        [ngStyle]="{'max-width': 100/columnNumber + '%'}">
   </div>
   <div cdkDropList *ngFor="let item of items" class="sam-drop-list-item"
